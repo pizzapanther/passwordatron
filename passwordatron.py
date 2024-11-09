@@ -20,7 +20,7 @@ class App(tk.Frame):
     super().__init__(self.root)
     self.pack()
 
-    ttk.Label(self, text="Enter Password").pack(pady=10, padx=10, side="top")
+    ttk.Label(self, text=f"Enter Password for {self.start_app}").pack(pady=10, padx=10, side="top")
 
     self.pw = tk.Entry(self, show="*")
     self.pw.pack(pady=10, padx=10, side="top")
@@ -52,7 +52,7 @@ def run():
 
   pwapp = App(sys.argv[1], **options)
   pwapp.master.title("Passwordatron")
-  pwapp.master.maxsize(400, 400)
+  pwapp.master.maxsize(800, 400)
   pwapp.root.mainloop()
 
 
