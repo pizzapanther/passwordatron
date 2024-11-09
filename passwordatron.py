@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 import tkinter as tk
-from tkinter import font
+from tkinter import font, messagebox
 from tkinter import ttk
 
 class App(tk.Frame):
@@ -40,7 +40,10 @@ class App(tk.Frame):
       self.root.destroy()
       os.system(self.apps[self.start_app])
 
-    self.contents.set('')
+    else:
+      self.contents.set('')
+      messagebox.showerror(title="Error", message='Password is Incorrect')
+      self.pw.focus()
 
 def run():
   config_path = Path(__file__).parent / 'config.json'
